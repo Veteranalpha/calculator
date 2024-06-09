@@ -22,19 +22,29 @@ body{
     padding: 20px;
 }
 .screen{
+    position: relative;
     width: 100%;
     height: 100px;
     border-radius: 15px;
     color: #ffffff;
 }
+ .input{
+    position: absolute;
+    bottom: 0;
+    right:0;
+    margin-right:20px ;
+    margin-bottom: 20px;
+}
+.output{
+    font-size: 30px;
+} 
 .keys{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
 }
 .key{
-    width: 40px;
-    height: 40px;
+    height: 2.5rem;
     border-radius: 25px;
     width: 100%;
     display: flex;
@@ -46,12 +56,15 @@ body{
 .key:hover{
     opacity: 0.7;
 }
+.key:active{
+    opacity: 0.8;
+}
 .key:nth-child(17){
     grid-column: span 2;
 }
 .adv{
     background-color:#A5A5A5;
-    color: #333333;
+    color: #121212;
 }
 .ari
 {
@@ -63,25 +76,49 @@ body{
 @media (max-width:500px) {
     body{
         background-color: #121212;
+        height: 100vh;
+        overflow-y: hidden;
+        
     }
     .container{
         position: relative;
-        max-width: 100%;
         height: 100%;
-        margin: 0px 0px;
     }
     .screen{
+        position: relative;
         width: 100%;
-        height: 50%;
+        height: 40%;
         border-radius: 15px;
         color: #ffffff;
         border: 1px solid #333333;
     }
+    .input{
+        position: absolute;
+        bottom: 0;
+        right:0;
+        margin-right:20px ;
+        margin-bottom: 20px;
+    }
+    .output{
+        margin-left: 20px;
+        margin-top: 30px;
+        font-size: 50px;
+    } 
     .keys{
         position: absolute;
         height: 40%;
         bottom: 40px;
         right: 0;
         left: 0;
+    }
+    .key{
+    height: 4rem;
+     width: 4rem;
+     border-radius: 50%;
+    }
+    .key:nth-child(17){
+        grid-column: span  2;
+        width: 100%;
+        border-radius: 30px;
     }
 }
